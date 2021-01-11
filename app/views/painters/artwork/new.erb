@@ -1,0 +1,15 @@
+<h1><center> Create New Painting </center></h1>
+<% if @error %>
+    <% @error.uniq.each do |e| %>
+    <h3> Errors: <%=  e %> </h3>
+    <%end %>
+<%end %>
+
+<form action='/artwork' method="post"> 
+    <label> Name </label><br>
+        <input type="text" name="name"/><br><br><br>
+    <label> Image Url </label><br>
+        <input type="text" name="img"/><br><br><br>
+        <input type="hidden" name="painter_id" value="<%=@painter.id%>"/>
+    <input type="Submit" value="Submit">
+</form>

@@ -1,0 +1,17 @@
+<p>Button got me here</p>
+<html>
+    <body>
+        <h1>Need to Know More Music</h1>
+        <p>If you need new music in your life scroll down this list until you find something you dont recognize</p>
+        <% Musician.all.each do |m|%>
+            <ul>
+                <li>
+                    <%= m.name%>
+                    <form method="get" action='/musician/<%=m.id%>'>
+                        <button type="submit">See What They Got</button>
+                    </form>
+                </li>
+            </ul>
+        <% end%>
+    </body>
+<html>

@@ -1,0 +1,21 @@
+<html>
+    <head>
+        <font size="+10"><b><center>Are There Any You Don't Recognize</center></b></font><br><br><br><br><br><br>
+    </head>
+    <body>
+        <% @painters.each do |p|%>
+            <ul>
+                <li>
+                    <h1>Learn More About <%= p.name%></h1><br><br>
+                    <img src=<%=p.img%>><br>
+                    <form method="get" action='/painters/<%=p.id%>'>
+                        <button style="width:100px;height:50px;" type="submit"><%=p.name%></button>
+                    </form><br><br><br><br>
+                <li>
+            </ul>
+        <%end%><br><br><br>
+        <form method="get" action='/painters/new'>
+            <button style="width:80px;height:50px;" type="submit">Create New Painter</button>
+        </form><br><br><br><br>
+    </body>
+</html>

@@ -1,0 +1,10 @@
+<h1> Edit <%= @artwork.name%> </h1>
+
+<form action='/painters/artwork/<%=@artwork.id%>/edit' method="post"> 
+  <input type="hidden" name="_method" value="patch">
+    <label> Name </label><br>
+        <input type="text" name="name" value="<%=@artwork.name%>"/><br><br><br>
+    <label> Image Url </label><br>
+        <input type="text" name="img" value="<%=@artwork.img%>"/><br><br><br>
+    <input type="Submit" value="Edit Painting">
+</form>

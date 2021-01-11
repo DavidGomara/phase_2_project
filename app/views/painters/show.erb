@@ -1,0 +1,38 @@
+<br><br><br>
+<font size="+10"><b><center><%= @painter.name %></center></b></font><br><br>
+<p><%= @error%></p><br>
+<center><img src=<%=@painter.img%>></center><br><br><br>
+<p><%= @painter.bio %></p><br><br>
+<% if @artworks != nil%>
+    <% @artworks.each do |a|%>
+        <ul>
+            <li>
+                <h2><%= a.name%></h2><br>
+                <img src=<%=a.img%>>
+                <% if session[:user_id] == a.user_id%>
+                    <form method="get" action='/painters/artwork/<%= a.id%>/edit'>
+                        <button type="submit">Edit Art Work</button>
+                    </form>
+                    <form method="get" action='/painters/artwork/<%= a.id%>/delete'>
+                        <button type="submit">Delete Painting</button>
+                    </form>
+                <% end %><br><br><br><br><br><br>
+            <li>
+        </ul>
+    <%end%>
+<% end %>
+<% if session[:user_id] == @painter.user_id%>
+    <form method="get" action='/painters/<%= @painter.id%>/edit'>
+        <button type="submit">Edit Artist</button>
+    </form>
+<% end %>
+<form method="get" action='/painters/artwork/<%=@painter.id%>/new'>
+    <button style="width:80px;height:50px;" type="submit">Add Painting</button>
+</form>
+<% if session[:user_id] == @painter.user_id%>
+    <form method="get" action='/painters/<%= @painter.id%>/delete'>
+        <button type="submit">Delete Artist</button>
+    </form>
+<% end %>
+
+

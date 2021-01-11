@@ -1,0 +1,18 @@
+<html>   
+   <body> 
+        <h1> Signup </h1>
+            <% if @error_2 %>
+                <%= @error_2 %>
+            <%end %>
+            <% if @error %>
+                <% @error.uniq.each do |e| %>
+                <h3> Errors: <%=  e %> </h3>
+             <%end %>
+            <%end %>
+        <form action='/signup' method="post">
+            <p>Username:<input type=text name="username" /></p>
+            <p>Password:<input type=password name="password" /></p>
+            <input type=submit value="Submit" />
+        </form>
+    </body>
+</html>

@@ -1,0 +1,16 @@
+<html>
+    <body>
+        <h1>Login</h1>
+        <p> <%= @error %> </p>
+
+        <form action='/login' method="post">
+            <p>Username:<input type=text name="username" /></p>
+            <p>Password:<input type=password name="password" /></p>
+            <input type=submit value="Submit" />
+        </form>
+        <h3>No Account, Sign Up<h3>
+        <form method="get" action='/signup'>
+            <button type="submit">Sign Up</button>
+        </form>
+    </body>
+</html>
